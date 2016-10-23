@@ -1,0 +1,47 @@
+.cart-item{
+  position: relative;
+  height: 30px;
+  vertical-align: middle;
+
+
+}
+  span{
+    position: absolute;
+  }
+
+  input{
+    height: 25px;
+    margin-left: 150px;
+  }
+  .title{
+    font-weight: bold;
+    left: 5px;
+  }
+  .price{
+    left: 550px;
+  }
+  .item-total{
+    left: 620px;
+  }
+  .order-error{
+    color: red;
+    left : 340px;
+  }
+  button{
+    float: right;
+  }
+  .change-quantity{
+    position: absolute;    
+    background: url('http://images.clipartpanda.com/up-clip-art-up-clip-art-5.jpg') no-repeat;
+    background-size: 25px;
+    width: 25px ;
+    height: 20px;
+    top: 2px;
+  }
+  #decrease{
+    left: 120px;
+    transform: rotate(180deg);
+  }
+  #increase{
+    left: 310px;  
+  }
