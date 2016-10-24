@@ -1,0 +1,3 @@
+ng-src & ng-href
+  src="/images/cats/{{favoriteCat}}" might not work well
+    browsers are aggressive about loading images parallel to other content, angular doesn't get a chance to intercept data binding requests.
