@@ -2,7 +2,7 @@
   position: relative;
   height: 30px;
   vertical-align: middle;
-
+  margin-bottom: 10px;
 
 }
   span{
@@ -11,21 +11,23 @@
 
   input{
     height: 25px;
-    margin-left: 150px;
+    margin-left: 140px;
   }
   .title{
     font-weight: bold;
-    left: 5px;
   }
   .price{
-    left: 550px;
+    left: 424px;
   }
   .item-total{
-    left: 620px;
+    left: 505px;
   }
   .order-error{
     color: red;
-    left : 340px;
+    left : 324px;
+  }
+  .total-error{
+    color: red;
   }
   button{
     float: right;
@@ -39,9 +41,9 @@
     top: 2px;
   }
   #decrease{
-    left: 120px;
+    left: 115px;
     transform: rotate(180deg);
   }
   #increase{
-    left: 310px;  
+    left: 298px;  
   }

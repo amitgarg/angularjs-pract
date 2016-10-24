@@ -22,33 +22,30 @@ myapp.controller("MainCtrl", function ($scope) {
     max_order: 2
   }];
 
+  $scope.$watch('calculateTotal', function(){
+    var error = $scope.items.some(item => item.error);
+    if(error){
+      $scope.total = '';
+      $scope.totalError = "Some of the item quantity is not valid";
+    }else{
+      $scope.totalError ='';
+       $scope.total = $scope.items.reduce(function (prev, item) {
+        return prev + (item.price * item.quantity);
+      }, 0);
+    }
+    $scope.calculateTotal = false;
+  })
+
   $scope.remove = function (index) {
     $scope.items.splice(index, 1);
   }
 
-  $scope.total = function () {
-    return $scope.items.reduce(function (prev, item) {
-      return prev + (item.price * item.quantity);
-    }, 0);
-  }
-
   $scope.change = function (index, increasing) {
     var item = $scope.items[index];
-    var current = item.quantity;    
-    if (increasing) {
-      if (current == item.max_order) {
-        item.error = 'The quantity is not allowed';
-      }
-      item.quantity++;
-    } else {
-      if (current == 0) {
-        item.error = 'The quantity is not allowed';
-      }
-      item.quantity--;
-    }
-    current = item.quantity;
+    increasing ? item.quantity++ : item.quantity--;
+    var current = item.quantity;
     if (current < 0 || current > item.max_order) {
-      item.error = 'The quantity is not allowed';
+      item.error = 'invalid quantity';
     } else {
       item.error = '';
     }
