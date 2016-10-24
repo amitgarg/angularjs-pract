@@ -36,4 +36,11 @@ controllers
     actual nesting happens in the scopes
     nested controller gets a $scope which is prototypically inherits from its parent controller's $scope
 
+Publishing Model data with scopes
+  ways to setup the model from the template itself
+    through an Expressions  
+      ng-click='count=3'  => sets the $scope.count to 3
+    using ng-model on a form input
+      this creates a bi-directional data binding
+
 
