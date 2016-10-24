@@ -43,4 +43,30 @@ Publishing Model data with scopes
     using ng-model on a form input
       this creates a bi-directional data binding
 
+Observing model changes with $watch
+  declaration
+    $watch(watchFn, watchAction, deepWatch)
+  explaination
+    watchFn : string with an angular expression or a function returning the value to watch
+      can be called multiple times, should be computationally cheap
+    watchAction : function or expression to be called when watchFn changes
+      in the function form: function(newValue, oldValue, scope)
+    deepWatch : watching individual items in an array or properties in an object
+  deregistration
+    watch function returns a function that on call will deregister the listener
+    var dereg = $scope.$watch('someModel.someProperty', callbackOnChange);
+    dereg();
+  executing watchFn only when page loads
+    don't provide watchAction, just only watchFn
+  watching multiple things
+    ways
+      put them in an array or object and pass deepWatch as true
+      watch a concatenated value of the properties
+        write an expression to generate concatenated values
+        if the list is long, write a function the returns the concatenated value
+
+
+
+
+
 
