@@ -10,11 +10,16 @@
   }
 
   input{
+    width: 30px;
     height: 25px;
-    margin-left: 140px;
+    margin-left: 268px;
+  }
+
+  input[type='checkbox']{
+    left: -100px;
   }
   .title{
-    font-weight: bold;
+    font-weight: normal;
   }
   .price{
     left: 424px;
@@ -27,10 +32,17 @@
     left : 324px;
   }
   .total-error{
+    margin-left: 10px;
     color: red;
+  }
+  .total-checkout{
+    margin-left: 10px;
+    color: green;
   }
   button{
     float: right;
+    width : 55px;
+    padding: 0px;
   }
   .change-quantity{
     position: absolute;    
@@ -41,7 +53,7 @@
     top: 2px;
   }
   #decrease{
-    left: 115px;
+    left: 242px;
     transform: rotate(180deg);
   }
   #increase{
