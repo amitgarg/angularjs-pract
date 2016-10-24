@@ -19,7 +19,10 @@
       </div>
       <input type="checkbox" ng-model="calculateTotal">Calculate Total</input>
       <button>Calculate</button>
-      <div>Total : {{total}}<span class="total-checkout" ng-hide='totalError || quantityChanged'>Proceed to Checkout!</span><span class="total-error" ng-show='totalError && !quantityChanged'>{{totalError}}</span></div>
+      <div>Total : {{total}}
+        <span class="total-checkout" ng-hide='totalError || quantityChanged'>Proceed to Checkout!</span>
+        <span class="total-error" ng-show='totalError && !quantityChanged'>{{totalError}}</span>
+      </div>
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
