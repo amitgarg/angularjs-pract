@@ -23,6 +23,11 @@ myapp.controller("MainCtrl", function ($scope) {
   }];
 
   $scope.$watch('calculateTotal', function(){
+    $scope.startCalculating();   
+    $scope.calculateTotal = false;
+  })
+
+  $scope.startCalculating = function(){
     var error = $scope.items.some(item => item.error);
     if(error){
       $scope.total = '';
@@ -33,8 +38,7 @@ myapp.controller("MainCtrl", function ($scope) {
         return prev + (item.price * item.quantity);
       }, 0);
     }
-    $scope.calculateTotal = false;
-  })
+  }
 
   $scope.remove = function (index) {
     $scope.items.splice(index, 1);

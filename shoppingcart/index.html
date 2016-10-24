@@ -5,7 +5,7 @@
   </head>
   <body >
 
-    <div ng-controller="MainCtrl">
+    <form ng-submit="startCalculating()" ng-controller="MainCtrl">
       <h1>Your Order</h1>
       <div ng-repeat="item in items" class="cart-item">
         <span class="title">{{item.title}}</span>
@@ -18,8 +18,9 @@
         <button ng-click="remove($index)">Remove</button>
       </div>
       <input type="checkbox" ng-model="calculateTotal">Calculate Total</input>
+      <button>Calculate</button>
       <div>Total : {{total}} <span class="total-error">{{totalError}}</span></div>
-    </div>
+    </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script type="text/javascript" src="./app.js"></script>
