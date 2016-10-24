@@ -54,3 +54,6 @@
   #increase{
     left: 298px;  
   }
+  .price-error{
+    color: red;
+  }

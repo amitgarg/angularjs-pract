@@ -14,7 +14,7 @@
         <div class="change-quantity" id="increase" ng-click="change($index, true)"></div>
         <span class="order-error">{{item.error}}</span>
         <span class="price">{{item.price | currency}}</span>
-        <span class="item-total">{{item.price*item.quantity | currency}}</span>
+        <span class="item-total" ng-class="{'price-error': item.error}">{{item.price*item.quantity | currency}}</span>
         <button ng-click="remove($index)">Remove</button>
       </div>
       <input type="checkbox" ng-model="calculateTotal">Calculate Total</input>
