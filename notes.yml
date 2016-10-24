@@ -1,3 +1,22 @@
 ng-src & ng-href
   src="/images/cats/{{favoriteCat}}" might not work well
     browsers are aggressive about loading images parallel to other content, angular doesn't get a chance to intercept data binding requests.
+
+Expressions
+  Goal
+    create hooks between template, application logic and data
+    prevent application logic from sneaking into the template
+  Usage
+    mathematic operations   +, -, /, *, %
+    comparisons             ==, !=, >, <, >=, <=
+    boolean logic           &&, ||, !
+    bitwise operations      \^, &, |
+    call functions exposed on $scope in controller
+    reference arrays and object notation    [], {}, .
+  parsing
+    computed with angular custom parser not with eval()
+    more restrictive
+    more forgiving to undefined and null
+    no NullPointerException error, Template will simply render nothing
+    allows to safely use model values that havn't been set yet
+
