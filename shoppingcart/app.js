@@ -56,4 +56,6 @@ myapp.controller("MainCtrl", function ($scope) {
       item.error = '';
     }
   }
+
+  $scope.priceClass='price-class';
 });
