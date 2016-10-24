@@ -10,7 +10,7 @@
       <div ng-repeat="item in items" class="cart-item">
         <span class="title">{{$index}} {{$first}} {{item.title}}</span>
         <div class="change-quantity" id="decrease" ng-click="change($index, false)"></div>
-        <input type="text" name="" ng-model="item.quantity">
+        <input type="text" class="item-quantity" ng-model="item.quantity">
         <div class="change-quantity" id="increase" ng-click="change($index, true)"></div>
         <span class="order-error">{{item.error}}</span>
         <span class="price">{{item.price | currency}}</span>
@@ -19,7 +19,7 @@
       </div>
       <input type="checkbox" ng-model="calculateTotal">Calculate Total</input>
       <button>Calculate</button>
-      <div>Total : {{total}}<span class="total-checkout" ng-hide='totalError'>Proceed to Checkout!</span><span class="total-error" ng-show='totalError'>{{totalError}}</span></div>
+      <div>Total : {{total}}<span class="total-checkout" ng-hide='totalError || quantityChanged'>Proceed to Checkout!</span><span class="total-error" ng-show='totalError && !quantityChanged'>{{totalError}}</span></div>
     </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>

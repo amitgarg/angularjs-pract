@@ -28,6 +28,7 @@ myapp.controller("MainCtrl", function ($scope) {
   })
 
   $scope.startCalculating = function(){
+    $scope.quantityChanged = false;
     var error = $scope.items.some(item => item.error);
     if(error){
       $scope.total = '';
@@ -45,6 +46,7 @@ myapp.controller("MainCtrl", function ($scope) {
   }
 
   $scope.change = function (index, increasing) {
+    $scope.quantityChanged = true;
     var item = $scope.items[index];
     increasing ? item.quantity++ : item.quantity--;
     var current = item.quantity;
