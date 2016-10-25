@@ -7,6 +7,7 @@
 
     <form ng-submit="startCalculating()" ng-controller="MainCtrl">
       <h1>Your Order</h1>
+      <h2>Number of Items: {{totalQuantity}}</h2>
       <div ng-repeat="item in items" class="cart-item">
         <span class="title">{{$index}} {{$first}} {{item.title}}</span>
         <div class="change-quantity" id="decrease" ng-click="change($index, false)"></div>
@@ -17,11 +18,11 @@
         <span class="item-total" ng-class="{'price-error': item.error}">{{item.price*item.quantity | currency}}</span>
         <button ng-click="remove($index)">Remove</button>
       </div>
-      <input type="checkbox" ng-model="calculateTotal">Calculate Total</input>
+      <input type="checkbox" ng-model="calculateTotal">Calculate Total</input>  
       <button>Calculate</button>
       <div>Total : {{total}}
         <span class="total-checkout" ng-hide='totalError || quantityChanged'>Proceed to Checkout!</span>
-        <span class="total-error" ng-show='totalError && !quantityChanged'>{{totalError}}</span>
+        <span class="total-error" ng-show='totalError && !quantityChanged'>{{totalError}}</span>        
       </div>
     </form>
 

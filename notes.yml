@@ -65,6 +65,39 @@ Observing model changes with $watch
         write an expression to generate concatenated values
         if the list is long, write a function the returns the concatenated value
 
+Organizing Dependencies with Modules
+  Modules
+    provide a way to group dependencies for a functional area 
+    automatically resolve dependencies (Dependency Injection)  
+    in most applications it will work well enough to create a single module for all the code you create and put all your dependencies in it
+  Services 
+    Generally these dependencies are called services
+    are singleton
+    carry out tasks necessary to support application's functionality
+      $location : interacting with browser's location
+      $route : switching views based on location (URL)
+      $http : communicating with server
+    shared across controllers that need them
+    good mechanism for communication and sharing state between controllers
+    Three functions for creating services
+      provider(name, Object or constructor())
+        configurable
+        complex creation logic
+        if pass an object
+          it should have $get function which returns service instance
+          something like {$get: $getFunction()}
+        else
+          angular assumes it a constructor, when called, creates instance of service
+      factory(name, $getFunction())
+        non-configurable 
+        complex creation logic
+        equivalent to provider(name, {$get: $getFunction()})
+      service(name, constructor())
+        non-configurable
+        simple creation logic
+        equivalent to constructor option with provider
+
+
 
 
 
