@@ -9,7 +9,7 @@
       <h1>Your Order</h1>
       <h2>Number of Items: {{totalQuantity}}</h2>
       <div ng-repeat="item in items" class="cart-item">
-        <span class="title">{{$index}} {{$first}} {{item.title}}</span>
+        <span class="title">{{$index}} {{$first}} {{item.title | upperCase}}</span>
         <div class="change-quantity" id="decrease" ng-click="change($index, false)"></div>
         <input type="text" class="item-quantity" ng-model="item.quantity">
         <div class="change-quantity" id="increase" ng-click="change($index, true)"></div>

@@ -97,6 +97,20 @@ Organizing Dependencies with Modules
         simple creation logic
         equivalent to constructor option with provider
 
+Formatting Data with Filters
+  allow to transform data for display to the user within an interpolation in template
+  using Filters
+    {{expressions | filterName : param1 : ...paramN}}
+    params are separated by :
+    params itself can be angular expressions
+  Chaining of Filters
+    using pipe (|) symbol
+      {{12.9 | currency | number:0}}  will display => $13
+  filters should be stateless
+  custom filter should be a pure function
+
+
+
 
 
 
