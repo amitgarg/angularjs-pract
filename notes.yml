@@ -20,3 +20,20 @@ Expressions
     no NullPointerException error, Template will simply render nothing
     allows to safely use model values that havn't been set yet
 
+controllers
+  responsibilities
+    setup initial state of application model
+    expose model and functions to the view through $scope
+    watch other parts of model for changes and take action
+  info
+    to keep controller manageable create one controller per functional area in view
+    tied to a specific peice of DOM that they are incharge of managing
+  defining, wats to associate a controller with DOM
+    in template using ng-controller
+    associating it with a dynamically loadable DOM template fragment (view), through a route
+  nested controllers
+    sharing model and functions through an inheritance tree
+    actual nesting happens in the scopes
+    nested controller gets a $scope which is prototypically inherits from its parent controller's $scope
+
+
