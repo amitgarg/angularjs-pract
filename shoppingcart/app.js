@@ -1,4 +1,4 @@
-var myapp = angular.module('myApp', []);
+var myapp = angular.module('myApp', ['ngRoute']);
 myapp.factory('ItemService', function () {
   var service = {};
   var items = [{
@@ -80,3 +80,15 @@ myapp.filter('upperCase', function(){
     return input.charAt(0).toUpperCase() + input.slice(1);
   }
 })
+
+myapp.controller("CheckoutCtrl", function ($scope, ItemService) {
+  $scope.numberOfItems = ItemService.getTotalQuantity();
+  $scope.toPay = ItemService.query().reduce(function (prev, item) {
+        return prev + (item.price * item.quantity);
+      }, 0);
+});
+myapp.config(function($routeProvider){
+  $routeProvider
+  .when('/cart', {controller: 'MainCtrl', templateUrl: './templates/cart.html'})
+  .when('/checkout', {controller: 'CheckoutCtrl', templateUrl: './templates/checkoutsummary.html'});
+});

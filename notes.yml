@@ -109,6 +109,12 @@ Formatting Data with Filters
   filters should be stateless
   custom filter should be a pure function
 
+Changing Views with Routes and $location
+  use $route service for managing show and hiding of templates
+  Routes 
+    lets you specify, for a URL in the browser, angular should load a template and instantiate a controller to provide context for the template
+    
+
 
 
 

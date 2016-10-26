@@ -1,0 +1,20 @@
+<form ng-submit="startCalculating()" >
+        <h1>Your Order</h1>
+        <h2>Number of Items: {{totalQuantity}}</h2>
+        <div ng-repeat="item in items" class="cart-item">
+          <span class="title">{{$index}} {{$first}} {{item.title | upperCase}}</span>
+          <div class="change-quantity" id="decrease" ng-click="change($index, false)"></div>
+          <input type="text" class="item-quantity" ng-model="item.quantity">
+          <div class="change-quantity" id="increase" ng-click="change($index, true)"></div>
+          <span class="order-error">{{item.error}}</span>
+          <span ng-class="['price', priceClass]">{{item.price | currency}}</span>
+          <span class="item-total" ng-class="{'price-error': item.error}">{{item.price*item.quantity | currency}}</span>
+          <button ng-click="remove($index)">Remove</button>
+        </div>
+        <input type="checkbox" ng-model="calculateTotal">Calculate Total</input>  
+        <button>Calculate</button>
+        <div>Total : {{total}}
+          <span class="total-checkout" ng-hide='totalError || quantityChanged'>Proceed to Checkout! <a href='#/checkout'>Checkout</a></span>
+          <span class="total-error" ng-show='totalError && !quantityChanged'>{{totalError}}</span>        
+        </div>
+      </form>
